@@ -70,46 +70,326 @@
             </p>
         </div>
 	<div style="text-align: center; " data-mce-style="text-align: center;">
-        <a data-role="button" data-inline="true" data-theme="e" href="#page1" >
+        <a data-role="button" data-inline="true" data-theme="e" href="#dashboard" >
             Create Account!
         </a>
     </div>
     
 </div><!-- /content -->
 
-	<div class="signupfooter" data-role="footer" data-position="fixed" role="contentinfo">
-	<div class="fullsite">
-		<a class="ui-link" href="#">Full Site</a>
-	</div>
-	<div class="faq">
-		<a class="ui-link" href="#">FAQ</a>
-	</div>
-	<div class="copyright">
+	<div data-role="footer" data-position="fixed">
 		<h5>Project Manager</h5>
-	</div>
 	</div><!-- /footer -->
 </div><!-- /page -->
 
 
 <!-- Start of second page -->
-<div data-role="page" id="dashboard">
+<div data-role="page" id="dashboard" data-theme="a">
 
 	<div data-role="header">
-		<h1>Bar</h1>
+		<h1>Dashboard</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>		
-		<p><a href="#foo">Back to foo</a></p>	
+			        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-b">
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            <b>
+                            Create<br>Project<br>
+                            </b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-b" >
+                <div class="ui-bar ui-bar-b">
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            <b>
+                                Open<br>Projects<br>
+                            </b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="ui-bar ui-bar-b">
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            <b>
+                            Completed<br>Projects<br>
+                            </b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-c">
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            <b>
+                            Add<br>Client<br>
+                            </b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-c">
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            <b>
+                                Client<br>List</b>
+                            <br>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="ui-bar ui-bar-c">
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                            <b>
+                                Support<br>Tickets<br>
+                            </b>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-e">
+                    <p style="text-align: center;">
+                        <b>
+                            Enter<br>con
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-e">
+                    <p style="text-align: center;">
+                        <b>
+                            Enter<br>co
+                        </b>
+                    </p>
+                </div>
+            </div>
+            <div class="ui-block-c">
+                <div class="ui-bar ui-bar-e">
+                    <p style="text-align: center;" data-mce-style="text-align: center;">
+                        <b>
+                            Enter<br>c
+                        </b>
+                    </p>
+                </div>
+            </div>
+        </div>
+		<p><a href="#signup">Back to foo</a></p>	
 	</div><!-- /content -->
 
-	<div data-role="footer">
+	<div data-role="footer" data-position="fixed">
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
+
+<!-- addTask -->
+        <div data-role="page" data-theme="a" id="addProject">
+            
+        <div data-role="header" data-theme="a">
+
+    <h3> Project Manager</h3>
+          
+    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
+                
+                <div data-role="popup" id="menu">
+                     <ul style="list-style: none; padding-left: 2px;">
+                        <li>
+                            <a data-role="button" href="#home" data-theme="a" data-icon="home">
+                                Home
+                            </a>
+                        <li>
+                            <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
+                                9Grid
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#displayAll" rel="external" data-theme="a" data-icon="">
+                                Display All
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a data-role="button" href="#about" rel="external" data-theme="a" data-icon="">
+                                About
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Work
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <a data-role="button" href="#construction" rel="external" data-theme="a" data-icon="">
+                                Misc
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- Popup end -->
+
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#" data-theme="" data-icon="delete" id="clear">
+                                Clear Stored Projects
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#displayAll" data-theme="a" data-icon="info" id="displayLink">
+                                Display Projects
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!-- navbar end -->
+            </div> <!-- header end -->
+            
+            <div data-role="content">
+                
+                
+                
+                <div>
+                    <p style="text-align: justify; " data-mce-style="text-align: justify;">
+                        <b>Workorder info</b>
+                    </p>
+                    <p style="text-align: center; " data-mce-style="text-align: center;">
+                        <b>*<span style="color: rgb(255, 0, 0); ">fields are required.</span></b>
+                    </p>
+                </div>
+                
+                <form action="#" method="post" id="taskinfoform">
+                
+                <div data-role="fieldcontain">
+                    <label for="categoryList">
+                        *Select Brand
+                    </label>
+                    <select name="categoryList" id="categoryList" data-mini="true" data-native-menu="false" class="required">
+                        <option data-placeholder="true" value="" id=""> --Choose A Brand-- </option>
+                        <option value="Acer">
+                        	Acer
+                        </option>
+                        <option value="Apple">
+                            Apple
+                        </option>
+                        <option value="Asus">
+                            Asus
+                        </option>
+                        <option value="Dell">
+                            Dell
+                        </option>
+                        <option value="Gateway">
+                            Gateway
+                        </option>
+                        <option value="HP">
+                            HP
+                        </option>
+                        <option value="HTC">
+                            HTC
+                        </option>
+                        <option value="IBM">
+                            IBM
+                        </option>
+                        <option value="Lenovo">
+                            Lenovo
+                        </option>
+                        <option value="Motorola">
+                            Motorola
+                        </option>
+                        <option value="Samsung">
+                            Samsung
+                        </option>
+                        <option value="Sony">
+                            Sony
+                        </option>
+                        <option value="Toshiba">
+                            Toshiba
+                        </option>
+                        <option value="MSI">
+                            MSI
+                        </option>
+                        <option value="Other">
+                            Other
+                        </option>
+                    </select>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="taskname">*Customer Name:</label>
+                        <input name="taskname" id="taskname" placeholder="e.g. Project due soon!" value="" type="text" class="required">
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                	<fieldset data-role="controlgroup" data-mini="true">
+                		<label for="date">*Date:</label>
+                		<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}' class="required date" value="" placeholder="Month/Day/Year">
+                	</fieldset>
+                </div>
+
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="time">*Time:</label>
+                        <input name="time" id="time" placeholder="12:00PM" value="" type="time" class="required time">
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                        <label for="esttime">Estimated amount of time (In hours):</label>
+                        <input type="range" name="esttime" id="esttime" value="5" min="1" max="24" data-highlight="true">
+                    
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-type="vertical" data-mini="true">
+                        <legend></legend>
+                        <input name="urgent" id="urgent" type="checkbox">
+                        <label for="urgent">Urgent!</label>
+                    </fieldset>
+                </div>
+                
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                        <label for="textbox">
+                            Notes:
+                        </label>
+                        <textarea name="textbox" id="textbox" placeholder="Enter notes here...."></textarea>
+                    </fieldset>
+                </div>
+
+                <div data-role="fieldcontain">
+                		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" data-inline="true"/>
+                		
+                		<button type="submit" data-theme="b" id="submit" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false" data-icon="arrow-r" data-iconpos="left" data-inline="true" target="#displayAll")>Save Task</button>
+                		
+
+                </div>
+            
+                <a href="#taskFormErrors" id="tferrorslink" data-rel="dialog" data-transition="pop">Open Errors</a>
+            
+            </form>
+            <div data-role="footer" data-position="fixed">
+	            <h4>Page Footer</h4>
+	        </div><!-- /footer -->
+</div><!-- /page -->
+
+
+
 </body>
-
-
         <!-- JavaScript under here -->
         <script type="text/javascript" src="js/main.js"></script>
     </body>
