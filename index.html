@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+    <title>Login or signup today!</title>
+    <meta name="description" content="Todo List App, Just add and stay on task">
+    <meta name="keywords" content="productivity, time management, mobile app">
+    <meta name="robots" content="index, follow">
+    <!--  Mobile viewport -->
+    <meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+    
+    <!-- StyleSheets under here -->
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+    	
+    <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+    </head>
+    
+    <body>
+    
+<!-- Start of first page -->
+<div data-role="page" data-theme="a" id="signup">
+
+	<div data-role="header">
+		<h1>Project Manager</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+    <div>
+       <p style="text-align: center; "data-mce-style="text-align: center;">
+	       <b>
+           		Take a tour.
+           <br>
+              -----------------------------
+           </b>
+            </p>
+        </div>
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<label for="username">Username:</label>
+			<input type="text" name="username" id="username" value="" placeholder="Username"/>
+		</div>
+		
+		<div data-role="fieldcontain" class="ui-hide-label">
+			<label for="password">Password:</label>
+			<input id="password" type="password" name="password" id="password" value="" placeholder="Password"/>
+		</div>
+		
+	<div>            		
+    	<input data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Login" type="submit">   		
+    </div>
+        <div>
+            <p style="text-align: center; " data-mce-style="text-align: center;">
+                <b>
+                    Forgot your Password?
+                </b>
+            </p>
+        </div>
+        <div>
+            <p style="text-align: center; " data-mce-style="text-align: center;">
+                <b>------------ or ------------</b>
+            </p>
+        </div>
+	<div style="text-align: center; " data-mce-style="text-align: center;">
+        <a data-role="button" data-inline="true" data-theme="e" href="#page1" >
+            Create Account!
+        </a>
+    </div>
+    
+</div><!-- /content -->
+
+	<div class="signupfooter" data-role="footer" data-position="fixed" role="contentinfo">
+	<div class="fullsite">
+		<a class="ui-link" href="#">Full Site</a>
+	</div>
+	<div class="faq">
+		<a class="ui-link" href="#">FAQ</a>
+	</div>
+	<div class="copyright">
+		<h5>Project Manager</h5>
+	</div>
+	</div><!-- /footer -->
+</div><!-- /page -->
+
+
+<!-- Start of second page -->
+<div data-role="page" id="dashboard">
+
+	<div data-role="header">
+		<h1>Bar</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>		
+		<p><a href="#foo">Back to foo</a></p>	
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+</body>
+
+
+        <!-- JavaScript under here -->
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+
+</html>
