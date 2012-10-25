@@ -3,6 +3,7 @@
     
     <head>
     <title>Login or signup today!</title>
+    <meta charset="utf-8">
     <meta name="description" content="Todo List App, Just add and stay on task">
     <meta name="keywords" content="productivity, time management, mobile app">
     <meta name="robots" content="index, follow">
@@ -22,11 +23,19 @@
 
     	
     <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-	<script src="js/libs/modernizr.custom.min.js"></script>
+	<!-- <script src="js/libs/modernizr.custom.min.js"></script> -->
     </head>
     
     <body>
-    
+    <div id="menu">
+    <h3>Menu</h3>
+    <ul>
+	    <li class="active"><a href="#home" class="contentLink">Home </a></li>
+	    <li><a href="#home" class="contentLink">About </a></li>
+	    <li><a href="#home" class="contentLink">Portfolio </a></li>
+	    <li><a href="#home" class="contentLink">Contact </a></li>
+	</ul>
+</div>
 <!-- Start of first page -->
 <div data-role="page" data-theme="a" id="signup">
 
@@ -87,39 +96,40 @@
 <div data-role="page" id="dashboard" data-theme="a">
 
 	<div data-role="header">
+	<a href="#"class="showMenu">Menu</a>
 		<h1>Dashboard</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
-			        <div class="ui-grid-b">
-            <div class="ui-block-a">
-                <div class="ui-bar ui-bar-b">
+		<div class="ui-grid-b">
+            <div class="ui-block-a" >
+                <div class="ui-bar-b">
                     <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <span style="font-size: small; " data-mce-style="font-size: small;">
+                    	<span style="font-size: small; " data-mce-style="font-size: small;">
                             <b>
-                            Create<br>Project<br>
+                                <a href="#addWorkorder">Create<br>Work Order<br></a>
                             </b>
                         </span>
                     </p>
                 </div>
             </div>
             <div class="ui-block-b" >
-                <div class="ui-bar ui-bar-b">
+                <div class="ui-bar-b">
                     <p style="text-align: center; " data-mce-style="text-align: center;">
                         <span style="font-size: small; " data-mce-style="font-size: small;">
                             <b>
-                                Open<br>Projects<br>
+                                <a href="#addWorkorder">Open<br>Work Order</a>
                             </b>
                         </span>
                     </p>
                 </div>
             </div>
             <div class="ui-block-c">
-                <div class="ui-bar ui-bar-b">
+                <div class="ui-bar-b">
                     <p style="text-align: center; " data-mce-style="text-align: center;">
                         <span style="font-size: small; " data-mce-style="font-size: small;">
                             <b>
-                            Completed<br>Projects<br>
+                            <a href="#addWorkorder">Completed<br>Projects<br></a>
                             </b>
                         </span>
                     </p>
@@ -195,11 +205,11 @@
 </div><!-- /page -->
 
 <!-- addTask -->
-        <div data-role="page" data-theme="a" id="addProject">
+        <div data-role="page" data-theme="a" id="addWorkorder">
             
         <div data-role="header" data-theme="a">
 
-    <h3> Project Manager</h3>
+    <h3> Work Order System</h3>
           
     <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
                 
@@ -209,6 +219,8 @@
                             <a data-role="button" href="#home" data-theme="a" data-icon="home">
                                 Home
                             </a>
+                        </li>
+                        
                         <li>
                             <a data-role="button" href="#9Grid" rel="external" data-theme="a" data-icon="">
                                 9Grid
@@ -329,13 +341,18 @@
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup" data-mini="true">
                         <label for="taskname">*Customer Name:</label>
-                        <input name="taskname" id="taskname" placeholder="e.g. Project due soon!" value="" type="text" class="required">
+                        <input name="taskname" id="taskname" placeholder="John Doe" value="" type="text" class="required">
                     </fieldset>
                 </div>
-                
+                 <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="taskname">*Serial / Service Tag:</label>
+                        <input name="taskname" id="taskname" placeholder="5NKTGS1" value="" type="text" class="required">
+                    </fieldset>
+                </div>
                 <div data-role="fieldcontain">
                 	<fieldset data-role="controlgroup" data-mini="true">
-                		<label for="date">*Date:</label>
+                		<label for="date">*Date service is due:</label>
                 		<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}' class="required date" value="" placeholder="Month/Day/Year">
                 	</fieldset>
                 </div>
@@ -391,6 +408,7 @@
 
 </body>
         <!-- JavaScript under here -->
+        <!-- <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script> -->
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 
