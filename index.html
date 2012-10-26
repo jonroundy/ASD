@@ -266,12 +266,11 @@
                     <select name="deviceList" id="deviceList" data-mini="true" data-native-menu="false" class="required" />
                     
                         <option data-placeholder="true" value="" id=""> --Select a device-- </option>
-                        <option value="Acer">Acer</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Asus">Asus</option>
-                        <option value="Dell">Dell</option>
-                        <option value="Gateway">Gateway</option>
-                        <option value="HP">HP</option></option>
+                         <option value="Desktop">Desktop</option>
+                         <option value="Laptop">Laptop</option>
+                         <option value="Smartphone">Smart Phone</option>
+                         <option value="Tablet">Tablet</option>
+                         <option value="TV">TV</option>
                     </select>
                 </div>
                 
@@ -280,6 +279,12 @@
                 
                 <label for="custName">*Customer Name:</label>
                 <input type="text" name="custName" id="custName" data-mini="true" class="required" placeholder="John Doe" />
+                 
+                <label for="address">*Street Address:</label>
+                <input type="text" name="address" id="address" data-mini="true" class="required" placeholder="101 Developer Lane" />
+                
+                <label for="city">*City:</label>
+                <input type="text" name="city" id="city" data-mini="true" class="required" placeholder="Coderville" />      
                  
                 <div data-role="fieldcontain">
                     <label for="stateList" class="select">*Select a state:</label>
@@ -336,7 +341,10 @@
                         <option value="WY">Wyoming</option>
                     </select>
                 </div>
-
+                
+                <label for="zipcode">*zipcode:</label>
+                <input type="text" name="zipcode" id="zipcode" data-mini="true" class="required" placeholder="11337" />
+                
                 <div data-role="fieldcontain">
                 	<fieldset data-role="controlgroup" data-mini="true">
                 		<label for="date">*Date service is due:</label>
