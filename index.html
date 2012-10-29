@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
     <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
 
     	
     <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -214,7 +215,7 @@
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#" data-theme="" data-icon="delete" id="clear">
+                            <a href="#" data-theme="" data-icon="delete" id="clear" class="clear">
                                 Clear Stored Projects
                             </a>
                         </li>
@@ -239,11 +240,12 @@
                 </div>
                 
                 <form action="#" id="workOrderForm">
+                
                 <div data-role="fieldcontain">
                     <label for="oemList" class="select">*Select a OEM:</label>
                     <select name="oemList" id="oemList" data-mini="true" data-native-menu="false" class="required" />
-                    
-                        <option data-placeholder="true" value="" id=""> --Select a OEM-- </option>
+                    	
+                    	<option data-placeholder="true" value="" id=""> --Select a OEM-- </option>
                         <option value="Acer">Acer</option>
                         <option value="Apple">Apple</option>
                         <option value="Asus">Asus</option>
@@ -260,12 +262,13 @@
                         <option value="Other">Other</option>
                     </select>
                 </div>
+             
 
                 <div data-role="fieldcontain">
                     <label for="deviceList" class="select">*Select a device:</label>
                     <select name="deviceList" id="deviceList" data-mini="true" data-native-menu="false" class="required" />
                     
-                        <option data-placeholder="true" value="" id=""> --Select a device-- </option>
+                         <option data-placeholder="true" value="" id=""> --Select a device-- </option>
                          <option value="Desktop">Desktop</option>
                          <option value="Laptop">Laptop</option>
                          <option value="Smartphone">Smart Phone</option>
@@ -289,6 +292,7 @@
                 <div data-role="fieldcontain">
                     <label for="stateList" class="select">*Select a state:</label>
                     <select name="stateList" id="stateList" data-mini="true" data-native-menu="false" class="required" />
+                        <option data-placeholder="true" value="" id=""> --Select a State-- </option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -389,11 +393,22 @@
             <div data-role="footer" data-position="fixed">
 	            <h4>Page Footer</h4>
 	        </div><!-- /footer -->
-</div><!-- /page -->
+</div><!-- /addWorkOrder -->
 
+     <!-- Form Errors -->
+     <div data-role="dialog" id="taskFormErrors">
+        
+        	<div data-role="header" data-position="fixed">
+        		<h1>Missing Fields</h1>
+        	</div>
+        	
+        	<div data-role="content">
+        		<p>Please correct the following fields to continue.<p>
+        		<ul></ul> <!-- String pulled in from main.js addTask function. -->
+        	</div>
+        	
+</div><!-- Form Errors End -->
 
-
-</body>
         <!-- JavaScript under here -->
         <!-- <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script> -->
         <script type="text/javascript" src="js/main.js"></script>

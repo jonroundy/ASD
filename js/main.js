@@ -1,8 +1,7 @@
 $(function(){
 	//site code
 	
-	//$("[data-role=header]").fixedtoolbar({ tapToggle: false }); //Fix for header toggle
-	//$("[data-role=footer]").fixedtoolbar({ tapToggle: false }); //Fix for footer toggle
+	
 	
 	var menuStatus;
  
@@ -52,10 +51,107 @@ $('#home').on('pageinit', function(){
 });	
 
 $('#addWorkorder').on('pageinit', function(){
-	
-$('form').submit(function() {
-  alert('Handler for .submit() called.');
-  return false;
-});
+		var myform = $('#workOrderForm'),
+			tferrorslink= $('#tferrorslink')
+		;
+		
+		myform.validate({
+			invalidHandler: function(form, validator){
+				tferrorslink.click();
+				var html = '';
+				for(var key in validator.submitted){
+					var label = $('label[for^="'+ key +'"]').not('[generated]');
+					var legend = label.closest('fieldset').find('ui-controlgroup-label');
+					var fieldName = legend.length ? legend.text() : label.text();
+					html += '<li>'+ fieldName +'</li>';
+					var cleanString = html.replace(/[:]/g, ""); //Removes all instances of :
+
+				};
+				$("#taskFormErrors ul").html(cleanString, html)
+				//$("#taskFormErrors p").blink();
+		
+			},
+			submitHandler: function() {
+				var data = myform.serializeArray();
+				storeData(this.key);
+			} 
+});//End of myform. 
 
 }); // End of addWorkorder
+
+/*function getCheckboxVault(){
+		if ($('#urgent').checked()){
+			urgentValue = "Yes";
+		}else{
+			urgentValue	= "No";
+		}
+};*/
+
+if ($('#urgent').is(":checked"))
+		{
+ 		urgentValue = "Yes";
+		}else{
+		urgentValue	= "No";
+		};
+  $("input").val(["urgent" ]);
+
+
+/*
+$("#workOrderForm").validate(function(){
+
+}); // Validation for form
+*/
+var storeData = function(key){
+			if(!key){
+			var id					= Math.floor(Math.random()*100000001);
+		}else{
+			//Set the id to the existing key we're editing so that it will save over the data.
+			//The key is the same ky that's been passed along from the editSubmit event handler
+			//To the validate function, and then passed here, into the storeData function.
+			id = key;
+		};
+			//Gather up all our form field values and store in an object.
+			//Object properties are going to contain array with the form label and input value
+		console.log(urgent.value);
+		var item					= {};
+		item.oem					= ["OEM List: ", $('#oemList').val()];
+		item.device					= ["Device: ", $('#deviceList').val()];
+		item.serial					= ["Serial / Service Tag: ", $('#serial').val()];
+		item.custName				= ["Customer Name: ", $('#custName').val()];
+		item.address				= ["Address: ", $('#address').val()];
+		item.city					= ["City: ", $('#city').val()];
+		item.state					= ["State: ", $('#stateList').val()];
+		item.zipcode				= ["Zipcode: ", $('#zipcode').val()];
+		item.date					= ["Date: ", $('#date').val()];
+		item.esttime			 	= ["Estimated Repair Time: ", $('#esttime').val()];
+		item.urgent					= ["Work order UGRENT? ", $('#urgent').val()];
+		item.textbox			 	= ["Notes: ", $('#textbox').val()];
+
+			//Save data into Local Storage: Use Stringify to convert our object to a string. Local storage only stores strings.
+			//Save form elements into LS
+			localStorage.setItem(id, JSON.stringify(item));
+			alert("Task Saved!");
+			console.log(item);
+		//loadPage();
+		//letsr();
+		console.log("id", id);
+		
+*/
+};
+
+//End of storeData. 
+
+$("#clear").click(function() {
+  		if(localStorage.length === 0){
+			alert("There is no data to clear.");
+		}else{	
+			var ask = confirm("Are you sure you want to clear LocalStorage?");
+			if(ask){
+				localStorage.clear();
+				alert("LocalStorage has been cleared!");
+				window.location.reload();
+		}
+		return false;
+	}
+
+});
