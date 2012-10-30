@@ -1,8 +1,6 @@
 $(function(){
 	//site code
 	
-	
-	
 	var menuStatus;
  
     $("a.showMenu").click(function(){
@@ -79,23 +77,6 @@ $('#addWorkorder').on('pageinit', function(){
 
 }); // End of addWorkorder
 
-/*function getCheckboxVault(){
-		if ($('#urgent').checked()){
-			urgentValue = "Yes";
-		}else{
-			urgentValue	= "No";
-		}
-};*/
-
-if ($('#urgent').is(":checked"))
-		{
- 		urgentValue = "Yes";
-		}else{
-		urgentValue	= "No";
-		};
-  $("input").val(["urgent" ]);
-
-
 /*
 $("#workOrderForm").validate(function(){
 
@@ -110,9 +91,13 @@ var storeData = function(key){
 			//To the validate function, and then passed here, into the storeData function.
 			id = key;
 		};
+			if($("input[name='urgent']").is(':checked')) {
+				$('#urgent').val("Yes");
+			} else {
+				$('#urgent').val("No");
+		};
 			//Gather up all our form field values and store in an object.
 			//Object properties are going to contain array with the form label and input value
-		console.log(urgent.value);
 		var item					= {};
 		item.oem					= ["OEM List: ", $('#oemList').val()];
 		item.device					= ["Device: ", $('#deviceList').val()];
@@ -126,6 +111,7 @@ var storeData = function(key){
 		item.esttime			 	= ["Estimated Repair Time: ", $('#esttime').val()];
 		item.urgent					= ["Work order UGRENT? ", $('#urgent').val()];
 		item.textbox			 	= ["Notes: ", $('#textbox').val()];
+		console.log($('#urgent'));
 
 			//Save data into Local Storage: Use Stringify to convert our object to a string. Local storage only stores strings.
 			//Save form elements into LS
@@ -136,7 +122,7 @@ var storeData = function(key){
 		//letsr();
 		console.log("id", id);
 		
-*/
+
 };
 
 //End of storeData. 
