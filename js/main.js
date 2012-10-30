@@ -48,14 +48,14 @@ $('#home').on('pageinit', function(){
 	//code needed for main page goes here
 });	
 
-$('#addWorkorder').on('pageinit', function(){
-		var myform = $('#workOrderForm'),
-			tferrorslink= $('#tferrorslink')
-		;
+$('#addWorkorder').on('pageinit', function(){		
+		var fErrorslink = $('#fErrorsLink');
 		
-		myform.validate({
+		$('#workOrderForm').validate({
 			invalidHandler: function(form, validator){
-				tferrorslink.click();
+				//$(".label.error").appendTo("#formErrors");
+				
+				fErrorsLink.click();
 				var html = '';
 				for(var key in validator.submitted){
 					var label = $('label[for^="'+ key +'"]').not('[generated]');
@@ -65,17 +65,22 @@ $('#addWorkorder').on('pageinit', function(){
 					var cleanString = html.replace(/[:]/g, ""); //Removes all instances of :
 
 				};
-				$("#taskFormErrors ul").html(cleanString, html)
+				$("#formErrors ul").html(cleanString, html)
 				//$("#taskFormErrors p").blink();
 		
 			},
 			submitHandler: function() {
-				var data = myform.serializeArray();
+				$('#workOrderForm').serializeArray();
 				storeData(this.key);
-			} 
-});//End of myform. 
+			}
+		});//End of myform. 
+
 
 }); // End of addWorkorder
+
+
+
+
 
 /*
 $("#workOrderForm").validate(function(){
@@ -118,14 +123,15 @@ var storeData = function(key){
 			localStorage.setItem(id, JSON.stringify(item));
 			alert("Task Saved!");
 			console.log(item);
+			window.location.reload(); 
 		//loadPage();
 		//letsr();
 		console.log("id", id);
 		
 
-};
+}; //End of storeData.
 
-//End of storeData. 
+
 
 $("#clear").click(function() {
   		if(localStorage.length === 0){
