@@ -69,10 +69,7 @@ $('#addWorkOrder').on('pageinit', function() {
 				zipcode: { required: 'Zipcode is required.<br/>' },
 				date: { required: 'Date is required.<br/>' }
 			},
-			errorPlacement: function (error, element) {
-			console.log(
-                error.appendTo($("#formErrors"));
-            },
+
 
 			submitHandler: function() {
 				$('#workOrderForm').serializeArray();
