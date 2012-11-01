@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    
     <head>
     <title>Login or signup today!</title>
     <meta charset="utf-8">
@@ -35,7 +34,8 @@
 	    <li><a href="#home" class="contentLink">Portfolio </a></li>
 	    <li><a href="#home" class="contentLink">Contact </a></li>
 	</ul>
-</div>
+	</div>
+	
 <!-- Start of first page -->
 <div data-role="page" data-theme="a" id="signup">
 
@@ -44,7 +44,8 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-    <div>
+    
+    	<div>
        <p style="text-align: center; "data-mce-style="text-align: center;">
 	       <b>
            		Take a tour.
@@ -89,14 +90,14 @@
 	<div data-role="footer" data-position="fixed">
 		<h5>Project Manager</h5>
 	</div><!-- /footer -->
+	
 </div><!-- /page -->
-
 
 <!-- Start of second page -->
 <div data-role="page" id="dashboard" data-theme="a">
 
 	<div data-role="header">
-	<a href="#"class="showMenu">Menu</a>
+	<a href="#" class="showMenu">Menu</a>
 		<h1>Dashboard</h1>
 	</div><!-- /header -->
 
@@ -196,12 +197,15 @@
                 </div>
             </div>
         </div>
+	</div>
+
 		<p><a href="#signup">Back to foo</a></p>	
 	</div><!-- /content -->
-
+    
 	<div data-role="footer" data-position="fixed">
 		<h4>Page Footer</h4>
 	</div><!-- /footer -->
+    
 </div><!-- /page -->
 
 <!-- addWorkorder -->
@@ -237,7 +241,7 @@
                         <b>*<span style="color: rgb(255, 0, 0); ">fields are required.</span></b>
                     </p>
                 </div>
-                
+            
                 <form action="#" method="post" id="workOrderForm">
                 
                 <div data-role="fieldcontain">
@@ -250,7 +254,7 @@
                         <option value="Asus">Asus</option>
                         <option value="Dell">Dell</option>
                         <option value="Gateway">Gateway</option>
-                        <option value="HP">HP</option></option>
+                        <option value="HP">HP</option>
                         <option value="IBM">IBM</option>
                         <option value="Lenovo">Lenovo</option>
                         <option value="Motorola">Motorola</option>
@@ -267,7 +271,7 @@
                     <label for="deviceList" class="select">*Select a device:</label>
                     <select name="deviceList" id="deviceList" data-mini="true" data-native-menu="false" class="required" />
                     
-                         <option data-placeholder="true" value="" id=""> --Select a device-- </option>
+                         <option data-placeholder="true" value=""> --Select a device-- </option>
                          <option value="Desktop">Desktop</option>
                          <option value="Laptop">Laptop</option>
                          <option value="Smartphone">Smart Phone</option>
@@ -344,7 +348,7 @@
                         <option value="WY">Wyoming</option>
                     </select>
                 </div>
-                
+               
                 <label for="zipcode">*zipcode:</label>
                 <input type="text" name="zipcode" id="zipcode" data-mini="true" class="required" placeholder="11337" />
                 
@@ -377,18 +381,19 @@
                         <textarea name="textbox" id="textbox" placeholder="Enter notes here...."></textarea>
                     </fieldset>
                 </div>
-
+                
                 <div data-role="fieldcontain">
                 		<input type="reset" data-theme="a" data-icon="refresh" data-iconpos="left" value="Reset" data-inline="true"/>
                 		
-                		<button type="submit" data-theme="b" class="ui-btn-hidden" data-icon="arrow-r" data-iconpos="left" data-inline="true" target="#")>Save</button>
+                		<button type="submit" data-theme="b" class="ui-btn-hidden" data-icon="arrow-r" data-iconpos="left" data-inline="true" target="#">Save</button>
                 		
                 </div>
+           
                 <a href="#formErrors" id="fErrorsLink" data-rel="dialog" data-transition="pop">Open Errors</a>
                 <a href="#foo" data-rel="dialog">Open dialog</a> 
           </form>
-          
-            
+
+
             <div data-role="footer" data-position="fixed">
 	            <h4>Page Footer</h4>
 	        </div><!-- /footer -->
@@ -396,7 +401,7 @@
 
      <!-- Form Errors -->
      <div data-role="dialog" id="formErrors">
-        
+
         	<div data-role="header" data-position="fixed">
         		<h1>Missing Fields</h1>
         	</div>
@@ -406,7 +411,7 @@
         		<ul></ul> <!-- String pulled in from main.js addTask function. -->
         	</div>
         	
-</div><!-- Form Errors End -->
+        	</div><!-- Form Errors End -->
         
 <!-- displayAll -->
         <div data-role="page" data-theme="a" id="displayAll">

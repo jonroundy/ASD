@@ -4,7 +4,7 @@ ui-block-a, ui-block-b, ui-block-c, a {
 }
 
 #fErrorsLink{
-	display:none;
+	display:;
 }
 
 label.error{
@@ -19,10 +19,6 @@ label.error{
 
 .text-align-right {
 	text-align: right;
-}
-
-#fErrorsLink{
-	display:none;
 }
 
 #formErrors ul{

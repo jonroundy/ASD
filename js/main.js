@@ -1,50 +1,3 @@
-$(function(){
-	//site code
-	
-	var menuStatus;
- 
-    $("a.showMenu").click(function(){
-        if(menuStatus != true){
-        $(".ui-page-active").animate({
-            marginLeft: "165px",
-          }, 300, function(){menuStatus = true});
-          return false;
-          } else {
-            $(".ui-page-active").animate({
-            marginLeft: "0px",
-          }, 300, function(){menuStatus = false});
-            return false;
-          }
-    });
- 
-    $('.pages').live("swipeleft", function(){
-        if (menuStatus){
-        $(".ui-page-active").animate({
-            marginLeft: "0px",
-          }, 300, function(){menuStatus = false});
-          }
-    });
- 
-    $('.pages').live("swiperight", function(){
-        if (!menuStatus){
-        $(".ui-page-active").animate({
-            marginLeft: "165px",
-          }, 300, function(){menuStatus = true});
-          }
-    });
- 
-    $("#menu li a").click(function(){
-        var p = $(this).parent();
-        if($(p).hasClass('active')){
-            $("#menu li").removeClass('active');
-        } else {
-            $("#menu li").removeClass('active');
-            $(p).addClass('active');
-        }
-    });//Slide Menu
-});
-  
-
 $('#home').on('pageinit', function(){
 	//code needed for main page goes here
 });
@@ -52,10 +5,8 @@ $('#home').on('pageinit', function(){
 $('#addWorkOrder').on('pageinit', function() {
 
 	$('#workOrderForm').validate({
-			invalidHandler: function(form, validator) {
-
-			//$('workOrderForm').showErrors( errors )
-			//$("#formErrors").dialog('open');
+			invalidHandler: function(form, validator){
+			
 			},
 			messages: {
 				oemList: { required: 'OEM is required.<br/>' },
@@ -69,17 +20,14 @@ $('#addWorkOrder').on('pageinit', function() {
 				zipcode: { required: 'Zipcode is required.<br/>' },
 				date: { required: 'Date is required.<br/>' }
 			},
-
-
+			
 			submitHandler: function() {
 				$('#workOrderForm').serializeArray();
 				storeData(this.key);
-
-}
+			}
 });
-
-}); // End of addWorkorder
-
+	}); // End of addWorkorder
+	
 var storeData = function(key){
 			if(!key){
 			var id					= Math.floor(Math.random() * 100000001);
@@ -122,44 +70,7 @@ var storeData = function(key){
 		//console.log("id", id);
 		alert(item);
 		
-
 }; //End of storeData.
-
-/*
-var getData = function(data){
-				if(localStorage.length === 0){
-			var autoFill = confirm("There are no task's to display. So default data was added.");
-			if(autoFill === true){
-			autoFillData();
-		}
-	}
-	var makeDiv = g("datafield");
-	var makeList = g("dfId");
-	//makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
-	makeDiv.appendChild(makeList);	
-	for(var i=0, len=localStorage.length; i<len; i++){
-		var makeLi = document.createElement("li");
-		var linksLi = document.createElement("li");
-		makeList.appendChild(makeLi);
-		var key = localStorage.key(i);
-		var value = localStorage.getItem(key);
-		var obj = JSON.parse(value);
-		var makeSubList = document.createElement("li");
-		//makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
-		
-		makeLi.appendChild(makeSubList);
-		getImage(obj.cats[1], makeSubList);
-		for (var n in obj){
-			var makeSubLi = document.createElement("li");
-			makeSubList.appendChild(makeSubLi);
-			var optSubText = obj[n][0]+" "+obj[n][1];
-			makeSubLi.innerHTML = optSubText;
-			makeSubLi.appendChild(linksLi);
-		}
-		makeItemLinks(localStorage.key(i), linksLi);
-	}
-
-};
 
 $("#clear").click(function() {
   		if(localStorage.length === 0) {
@@ -175,8 +86,3 @@ $("#clear").click(function() {
 	}
 
 });
-
-$('#dialog').on('pageinit', function(){
-
-});
-*/
