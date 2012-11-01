@@ -3,12 +3,52 @@ ui-block-a, ui-block-b, ui-block-c, a {
 	
 }
 
+#fErrorsLink{
+	display:none;
+}
+
 label.error{
 	display:block;
 	margin:10px 0; 
 	color:#cc0000;
 }
+ 
+.text-align-center {
+	text-align: center;
+}
 
-#tferrorslink{
+.text-align-right {
+	text-align: right;
+}
+
+#fErrorsLink{
+	display:none;
+}
+
+#formErrors ul{
+	font-weight: 900;
+	list-style: none; 
+	padding-left: 2px;
+	line-height:  25px;
+}
+
+#formErrors p{
+	text-decoration: blink;
+	color: red;
+	font-style: oblique;
+	text-align: center;
+}
+
+h3.ui-title{
+	text-align: -webkit-left;
+	text-align: left;
+}
+
+#workOrderForm .ui-icon-grid {
+	
+	margin:-10px -10px 0 0 !important; 
+}
+
+#menu {
 	display:none;
 }

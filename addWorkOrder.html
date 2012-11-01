@@ -18,193 +18,8 @@
     <!-- StyleSheets under here -->
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-
-
-    	
-    <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-	<!-- <script src="js/libs/modernizr.custom.min.js"></script> -->
-    </head>
     
-    <body>
-    
-    <div id="menu">
-    <h3>Menu</h3>
-    <ul>
-	    <li class="active"><a href="#home" class="contentLink">Home </a></li>
-	    <li><a href="#home" class="contentLink">About </a></li>
-	    <li><a href="#home" class="contentLink">Portfolio </a></li>
-	    <li><a href="#home" class="contentLink">Contact </a></li>
-	</ul>
-</div>
-<!-- Start of first page -->
-<div data-role="page" data-theme="a" id="signup">
-
-	<div data-role="header">
-		<h1>Project Manager</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-    <div>
-       <p style="text-align: center; "data-mce-style="text-align: center;">
-	       <b>
-           		Take a tour.
-           <br>
-              -----------------------------
-           </b>
-            </p>
-        </div>
-		<div data-role="fieldcontain" class="ui-hide-label">
-			<label for="username">Username:</label>
-			<input type="text" name="username" id="username" value="" placeholder="Username"/>
-		</div>
-		
-		<div data-role="fieldcontain" class="ui-hide-label">
-			<label for="password">Password:</label>
-			<input id="password" type="password" name="password" id="password" value="" placeholder="Password"/>
-		</div>
-		
-	<div>            		
-    	<input data-theme="b" data-icon="arrow-r" data-iconpos="left" value="Login" type="submit">   		
-    </div>
-        <div>
-            <p style="text-align: center; " data-mce-style="text-align: center;">
-                <b>
-                    Forgot your Password?
-                </b>
-            </p>
-        </div>
-        <div>
-            <p style="text-align: center; " data-mce-style="text-align: center;">
-                <b>------------ or ------------</b>
-            </p>
-        </div>
-	<div style="text-align: center; " data-mce-style="text-align: center;">
-        <a data-role="button" data-inline="true" data-theme="e" href="#dashboard" >
-            Create Account!
-        </a>
-    </div>
-    
-</div><!-- /content -->
-
-	<div data-role="footer" data-position="fixed">
-		<h5>Project Manager</h5>
-	</div><!-- /footer -->
-</div><!-- /page -->
-
-
-<!-- Start of second page -->
-<div data-role="page" id="dashboard" data-theme="a">
-
-	<div data-role="header">
-	<a href="#"class="showMenu">Menu</a>
-		<h1>Dashboard</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		<div class="ui-grid-b">
-            <div class="ui-block-a" >
-                <div class="ui-bar-b">
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                    	<span style="font-size: small; " data-mce-style="font-size: small;">
-                            <b>
-                                <a href="#addWorkOrder">Create<br>Work Order<br></a>
-                            </b>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-b" >
-                <div class="ui-bar-b">
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <span style="font-size: small; " data-mce-style="font-size: small;">
-                            <b>
-                                <a href="#addWorkOrder">Open<br>Work Order</a>
-                            </b>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-c">
-                <div class="ui-bar-b">
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <span style="font-size: small; " data-mce-style="font-size: small;">
-                            <b>
-                            <a href="#addWorkOrder">Completed<br>Projects<br></a>
-                            </b>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-a">
-                <div class="ui-bar ui-bar-c">
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <span style="font-size: small; " data-mce-style="font-size: small;">
-                            <b>
-                            Add<br>Client<br>
-                            </b>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-b">
-                <div class="ui-bar ui-bar-c">
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <span style="font-size: small; " data-mce-style="font-size: small;">
-                            <b>
-                                Client<br>List</b>
-                            <br>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-c">
-                <div class="ui-bar ui-bar-c">
-                    <p style="text-align: center; " data-mce-style="text-align: center;">
-                        <span style="font-size: small; " data-mce-style="font-size: small;">
-                            <b>
-                                Support<br>Tickets<br>
-                            </b>
-                        </span>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-a">
-                <div class="ui-bar ui-bar-e">
-                    <p style="text-align: center;">
-                        <b>
-                            Enter<br>con
-                        </b>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-b">
-                <div class="ui-bar ui-bar-e">
-                    <p style="text-align: center;">
-                        <b>
-                            Enter<br>co
-                        </b>
-                    </p>
-                </div>
-            </div>
-            <div class="ui-block-c">
-                <div class="ui-bar ui-bar-e">
-                    <p style="text-align: center;" data-mce-style="text-align: center;">
-                        <b>
-                            Enter<br>c
-                        </b>
-                    </p>
-                </div>
-            </div>
-        </div>
-		<p><a href="#signup">Back to foo</a></p>	
-	</div><!-- /content -->
-
-	<div data-role="footer" data-position="fixed">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-
-<!-- addWorkorder -->
+    <!-- addWorkorder -->
         <div data-role="page" data-theme="a" id="addWorkOrder">
             
         <div data-role="header" data-theme="a">
@@ -281,6 +96,9 @@
                 
                 <label for="custName">*Customer Name:</label>
                 <input type="text" name="custName" id="custName" data-mini="true" class="required" placeholder="John Doe" />
+               
+                <label for="phoneNumber">*Phone Number:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" data-mini="true" class="required" placeholder="555-555-5555" />
                  
                 <label for="address">*Street Address:</label>
                 <input type="text" name="address" id="address" data-mini="true" class="required" placeholder="101 Developer Lane" />
@@ -385,7 +203,7 @@
                 		
                 </div>
                 <a href="#formErrors" id="fErrorsLink" data-rel="dialog" data-transition="pop">Open Errors</a>
-                <a href="#foo" data-rel="dialog">Open dialog</a> 
+                <a href="#formErrors" data-rel="dialog">Open dialog</a> 
           </form>
           
             
@@ -395,7 +213,7 @@
 </div><!-- /addWorkOrder -->
 
      <!-- Form Errors -->
-     <div data-role="dialog" id="formErrors">
+     <div data-role="page" id="formErrors">
         
         	<div data-role="header" data-position="fixed">
         		<h1>Missing Fields</h1>
@@ -407,40 +225,7 @@
         	</div>
         	
 </div><!-- Form Errors End -->
-        
-<!-- displayAll -->
-        <div data-role="page" data-theme="a" id="displayAll">
-        
-        <div data-role="header" data-theme="a">
-          
-    <a data-role="button" data-transition="fade" data-rel="popup" data-theme="a" href="#menu" data-icon="grid" data-iconpos="left" class="ui-btn-right">Menu</a>
 
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#" data-theme="" data-icon="delete" id="clear">
-                                Clear Stored Tasks
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#addTask" data-theme="a" data-icon="plus">
-                                Add Task
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div data-role="content" id="datafield">
-            	<ul id="dfId" data-filter="true" data-role="listview" data-filter-placeholder="Search Tasks...">
-            	
-            	</ul>
-                
-            </div>
-           
-        </div>
-<!-- displayAll /End -->
-        
         <!-- JavaScript under here -->
         <!-- <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script> -->
             <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
