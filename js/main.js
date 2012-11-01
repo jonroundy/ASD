@@ -4,29 +4,35 @@ $('#home').on('pageinit', function(){
 
 $('#addWorkOrder').on('pageinit', function() {
 
-	$('#workOrderForm').validate({
-			invalidHandler: function(form, validator){
+	$('#workOrderForm').validate( {
+		invalidHandler: function (form, validator) {
+			$.mobile.changePage("#formErrors");
 			
-			},
+		},
 			messages: {
-				oemList: { required: 'OEM is required.<br/>' },
-				deviceList: { required: 'Device type is required.<br/>' },
-				serial: { required: 'Serial is required.<br/>' },
-				custName: { required: 'Customer Name is required.<br/>' },
-				phoneNumber: { required: 'Phone number is required.<br/>' },
-				address: { required: 'Address is required.<br/>' },
-				city: { required: 'City is required.<br/>' },
-				stateList: { required: 'State is required.<br/>' },
-				zipcode: { required: 'Zipcode is required.<br/>' },
-				date: { required: 'Date is required.<br/>' }
+			oemList: {		required: 'OEM is required.' },
+			deviceList: { 	required: 'Device type is required.' },
+			serial: { 		required: 'Serial is required.' },
+			custName: { 	required: 'Customer Name is required.' },
+			phoneNumber: { 	required: 'Phone number is required.' },
+			address: { 		required: 'Address is required.' },
+			city: { 		required: 'City is required.' },
+			stateList: { 	required: 'State is required.' },
+			zipcode: { 		required: 'Zipcode is required.' },
+			date: { 		required: 'Date is required.' }
 			},
 			
+			errorPlacement: function (error, element) {
+                //error.appendTo($("#formErrors"));
+                $('<li>'+ error.text() +'</li>').appendTo($("#formErrors ul"));
+              
+            },
 			submitHandler: function() {
 				$('#workOrderForm').serializeArray();
 				storeData(this.key);
 			}
-});
-	}); // End of addWorkorder
+		});
+		}); // End of addWorkorder
 	
 var storeData = function(key){
 			if(!key){
