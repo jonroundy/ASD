@@ -6,8 +6,7 @@ $('#addWorkOrder').on('pageinit', function() {
 
 	$('#workOrderForm').validate( {
 		invalidHandler: function (form, validator) {
-			$.mobile.changePage("#formErrors");
-			
+			$.mobile.changePage("#formErrors");	
 		},
 			messages: {
 			oemList: {		required: 'OEM is required.' },
@@ -21,15 +20,14 @@ $('#addWorkOrder').on('pageinit', function() {
 			zipcode: { 		required: 'Zipcode is required.' },
 			date: { 		required: 'Date is required.' }
 			},
-			
 			errorPlacement: function (error, element) {
-                //error.appendTo($("#formErrors"));
                 $('<li>'+ error.text() +'</li>').appendTo($("#formErrors ul"));
-              
             },
-			submitHandler: function() {
+			submitHandler: function(item) {
 				$('#workOrderForm').serializeArray();
 				storeData(this.key);
+				//$('<li>'+ item +'</li>').appendTo($("#displayAll ul"));
+				$.mobile.changePage("#displayAll");
 			}
 		});
 		}); // End of addWorkorder
@@ -74,11 +72,165 @@ var storeData = function(key){
 		//loadPage();
 		//letsr();
 		//console.log("id", id);
-		alert(item);
+		//alert(item);
 		
 }; //End of storeData.
+/*
+var getData = function(data){
+				if(localStorage.length === 0){
+			var autoFill = confirm("There are no task's to display. So default data was added.");
+			if(autoFill === true){
+			//autoFillData();
+		}
+	}
+	var makeDiv = $("#datafield");
+	var makeList = $("#dfId");
+	//makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
+	//makeDiv.appendChild(makeList);	
+	for(var i=0, len=localStorage.length; i<len; i++){
+		var makeLi = $("<li>");
+		var makeLi = $("<li>");
+		var linksLi = $("<li>");
+		// makeList.appendChild(makeLi); Delete me after testing
+		
+		$("#dfId").append('<li></li>');
+		
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		var obj = JSON.parse(value);
+		
+		var makeSubList = $("<li>");
+		//makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
+		
+		//makeLi.appendChild(makeSubList);
+		$('<li>' + '</li>')
+		
+		getImage(obj.cats[1], makeSubList);
+		for (var n in obj){
+			var makeSubLi = $("<li>");
+			//makeSubList.appendChild(makeSubLi);
+			var optSubText = obj[n][0]+" "+obj[n][1];
+			//makeSubLi.innerHTML = optSubText;
+			//makeSubLi.appendChild(linksLi);
+		}
+		makeItemLinks(localStorage.key(i), linksLi);
+	}
 
-$("#clear").click(function() {
+};
+*/
+var getData = function(data){
+				if(localStorage.length === 0){
+			var autoFill = confirm("There are no task's to display. So default data was added.");
+			if(autoFill === true){
+			autoFillData();
+		}
+	}
+	var makeDiv = $("#datafield");
+	var makeList = $("#dfId");
+	//makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
+	 //$("#datafield").appendChild(makeList);	
+	for(var i=0, len=localStorage.length; i<len; i++){
+		$("#makeLi");
+		$("#makeSubList");
+		$("#makeSubli");
+		$("#makeLi");
+		var key = localStorage.key(i);
+		var value = localStorage.getItem(key);
+		var obj = JSON.parse(value);
+		console.log(obj);
+		$()
+		
+		//var makeSubList = document.createElement("li");
+		//makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
+		
+		//makeLi.appendChild(makeSubList); //!!!created inside html
+		
+		getImage(obj.oem[1]);
+		for (var n in obj){
+			//var makeSubLi = document.createElement("li"); //!!! Created inside HTML
+			//makeSubList.appendChild(makeSubLi);
+			$('#optSubText').append(obj[n][0]+" "+obj[n][1]);
+			console.log(obj[n][0]+" "+obj[n][1]);
+			//makeSubLi.innerHTML = optSubText;
+			//makeSubLi.appendChild(linksLi);
+		}
+		//makeItemLinks(localStorage.key(i), linksLi);
+	}
+
+};
+
+var getImage = function(catName, obj){
+		
+		$('<img/>', {
+    src:     "images/oem/" + catName + ".png",
+    title:   catName,
+    'class': 'OEM_Logo', // in quotes because class is a reserved js word
+    click:   function( e ){
+        // Everything here happens when you click the image.
+        console.log( this );
+    }
+}).appendTo('#oemLogo');
+		
+		
+		//var imageLi = $("li");
+		//makeSubList.appendChild(imageLi);
+		//var newImg = $("img");
+		//var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
+		//imageLi.appendChild(newImg);
+	};
+/*
+$("#displayAll").on('pageinit', function(data){
+			//alert('maybe');
+			if(localStorage.length === 0){
+			var autoFill = confirm("There are no task's to display. So default data was added.");
+		if(autoFill === true){
+			//autoFillData();
+		}
+	}
+	for (var i=0, len=localStorage.length; i<len; i++) {
+	var makeLi = $("<li>");
+	makeLi.appendTo('#dfId');
+	
+	var key = localStorage.key(i);
+	var value = localStorage.getItem(key);
+	var obj = JSON.parse(value);
+	console.log(obj);
+	getImage(obj.oem[1], $("<li>"));
+	//$('<ul>'+ '<li>'+ obj +'</li>' +'</ul>').appendTo($("#dfId"));
+		
+		$("<p>" + obj.oem + "</p>").appendTo(makeLi);
+		$("<p>" + obj.device + "</p>").appendTo(makeLi);
+		$("<p>" + obj.serial + "</p>").appendTo(makeLi);
+		$("<p>" + obj.cust + "</p>").appendTo(makeLi);
+		$("<p>" + obj.phone + "</p>").appendTo(makeLi);
+		$("<p>" + obj.address + "</p>").appendTo(makeLi);
+		$("<p>" + obj.city + "</p>").appendTo(makeLi);
+		$("<p>" + obj.state + "</p>").appendTo(makeLi);
+		$("<p>" + obj.zipcode + "</p>").appendTo(makeLi);
+		$("<p>" + obj.date + "</p>").appendTo(makeLi);
+		$("<p>" + obj.esttime + "<p>").appendTo(makeLi);
+		$("<p>" + obj.urgent + "<p>").appendTo(makeLi);
+		$("<p>" + obj.texbox + "<p>").appendTo(makeLi);
+		//$("<p>" + obj.serial + "<p>").appendTo(makeLi);
+		
+		for (var n in obj){
+			var makeSubLi = $("<li>");
+	//	makeSubList.appendTo(makeSubLi);
+			var optSubText = obj[n][0]+" "+obj[n][1];
+	//	makeSubLi.innerHTML = optSubText;
+	//	makeSubLi.appendChild(linksLi);
+		}
+		
+	}
+
+	//console.log(getData);
+	
+	
+});
+*/
+
+
+$("#clear, #clear2").click(function() {
   		if(localStorage.length === 0) {
 			alert("There is no data to clear.");
 		}else{	
@@ -91,4 +243,8 @@ $("#clear").click(function() {
 		return false;
 	}
 
+});
+
+$('#displayAll').on('pageinit', function(){
+		getData(datafield);
 });
