@@ -223,7 +223,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#displayAll" data-theme="a" data-icon="info" id="displayLink">
+                            <a href="#search" data-theme="a" data-icon="info" id="displayLink">
                                 Display Projects
                             </a>
                         </li>
@@ -286,6 +286,9 @@
                 <label for="custName">*Customer Name:</label>
                 <input type="text" name="custName" id="custName" data-mini="true" class="required" placeholder="John Doe" />
                  
+                 <label for="custName">*Phone Number:</label>
+                <input type="text" name="phoneNumber" id="phoneNumber" data-mini="true" class="required" placeholder="555-555-5555" />
+                
                 <label for="address">*Street Address:</label>
                 <input type="text" name="address" id="address" data-mini="true" class="required" placeholder="101 Developer Lane" />
                 
@@ -413,8 +416,8 @@
         	
         	</div><!-- Form Errors End -->
         
-<!-- displayAll -->
-        <div data-role="page" data-theme="a" id="displayAll">
+<!-- search -->
+        <div data-role="page" data-theme="a" id="search">
         
         <div data-role="header" data-theme="a">
         
@@ -435,23 +438,12 @@
                 
         </div>
             <div data-role="content" id="datafield">
-            	<ul id="dfId" data-filter="true" data-role="listview" data-filter-placeholder="Search Work Orders...">
-            	<li id="oemLogo">
-            	<p> hello </p>
-            	</li>
-            	<li id="makeSubList">
-            	
-            	</li>
-            	
-            	<li id="makeSubLi">
-            	
-            	</li>
-            	
-            	<li id="optSubText"
+            	<ul id="search_list" data-filter="true" data-role="listview" data-inset="true" data-filter-placeholder="Search...">
+	            
             	</ul>
                 
             </div>
-        </div> <!-- displayAll /End -->
+        </div> <!-- search /End -->
         
         <!-- JavaScript under here -->
         <!-- <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script> -->

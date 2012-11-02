@@ -26,8 +26,8 @@ $('#addWorkOrder').on('pageinit', function() {
 			submitHandler: function(item) {
 				$('#workOrderForm').serializeArray();
 				storeData(this.key);
-				//$('<li>'+ item +'</li>').appendTo($("#displayAll ul"));
-				$.mobile.changePage("#displayAll");
+				//$('<li>'+ item +'</li>').appendTo($("#search ul"));
+				$.mobile.changePage("#search");
 			}
 		});
 		}); // End of addWorkorder
@@ -118,46 +118,38 @@ var getData = function(data){
 
 };
 */
+/*
 var getData = function(data){
 				if(localStorage.length === 0){
 			var autoFill = confirm("There are no task's to display. So default data was added.");
 			if(autoFill === true){
 			autoFillData();
-		}
-	}
-	var makeDiv = $("#datafield");
-	var makeList = $("#dfId");
+		};
+	};
+	var srch = $("#search_list");
 	//makeList.setAttribute("style", "list-style:none; padding-left:2px;"); // Style Rules for ul
 	 //$("#datafield").appendChild(makeList);	
 	for(var i=0, len=localStorage.length; i<len; i++){
-		$("#makeLi");
-		$("#makeSubList");
-		$("#makeSubli");
-		$("#makeLi");
+		
 		var key = localStorage.key(i);
+		
 		var value = localStorage.getItem(key);
+		
 		var obj = JSON.parse(value);
 		console.log(obj);
-		$()
-		
-		//var makeSubList = document.createElement("li");
-		//makeSubList.setAttribute("style", "list-style:none; padding-left:2px;");
-		
-		//makeLi.appendChild(makeSubList); //!!!created inside html
-		
-		getImage(obj.oem[1]);
-		for (var n in obj){
+		};
+	for(var n in obj) {
 			//var makeSubLi = document.createElement("li"); //!!! Created inside HTML
 			//makeSubList.appendChild(makeSubLi);
 			$('#optSubText').append(obj[n][0]+" "+obj[n][1]);
 			console.log(obj[n][0]+" "+obj[n][1]);
+			console.log(obj[n][0]+" ");
 			//makeSubLi.innerHTML = optSubText;
 			//makeSubLi.appendChild(linksLi);
 		}
 		//makeItemLinks(localStorage.key(i), linksLi);
-	}
-
-};
+	getImage(obj.oem[1]);
+}; */
 
 var getImage = function(catName, obj){
 		
@@ -169,7 +161,7 @@ var getImage = function(catName, obj){
         // Everything here happens when you click the image.
         console.log( this );
     }
-}).appendTo('#oemLogo');
+}).appendTo('#search, h3');
 		
 		
 		//var imageLi = $("li");
@@ -178,8 +170,8 @@ var getImage = function(catName, obj){
 		//var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
 		//imageLi.appendChild(newImg);
 	};
-/*
-$("#displayAll").on('pageinit', function(data){
+
+var getData = function(data){
 			//alert('maybe');
 			if(localStorage.length === 0){
 			var autoFill = confirm("There are no task's to display. So default data was added.");
@@ -188,46 +180,59 @@ $("#displayAll").on('pageinit', function(data){
 		}
 	}
 	for (var i=0, len=localStorage.length; i<len; i++) {
-	var makeLi = $("<li>");
-	makeLi.appendTo('#dfId');
+	
+	//var makeLi = $("<li>");
+	//makeLi.appendTo('#searchList');
 	
 	var key = localStorage.key(i);
 	var value = localStorage.getItem(key);
 	var obj = JSON.parse(value);
 	console.log(obj);
-	getImage(obj.oem[1], $("<li>"));
-	//$('<ul>'+ '<li>'+ obj +'</li>' +'</ul>').appendTo($("#dfId"));
+	
+	//getImage(obj.oem[1]);
+		}
+		for (var n in obj) {
 		
-		$("<p>" + obj.oem + "</p>").appendTo(makeLi);
-		$("<p>" + obj.device + "</p>").appendTo(makeLi);
-		$("<p>" + obj.serial + "</p>").appendTo(makeLi);
-		$("<p>" + obj.cust + "</p>").appendTo(makeLi);
-		$("<p>" + obj.phone + "</p>").appendTo(makeLi);
-		$("<p>" + obj.address + "</p>").appendTo(makeLi);
-		$("<p>" + obj.city + "</p>").appendTo(makeLi);
-		$("<p>" + obj.state + "</p>").appendTo(makeLi);
-		$("<p>" + obj.zipcode + "</p>").appendTo(makeLi);
-		$("<p>" + obj.date + "</p>").appendTo(makeLi);
-		$("<p>" + obj.esttime + "<p>").appendTo(makeLi);
-		$("<p>" + obj.urgent + "<p>").appendTo(makeLi);
-		$("<p>" + obj.texbox + "<p>").appendTo(makeLi);
-		//$("<p>" + obj.serial + "<p>").appendTo(makeLi);
-		
-		for (var n in obj){
-			var makeSubLi = $("<li>");
+			//var makeSubLi = $("<li>");
 	//	makeSubList.appendTo(makeSubLi);
 			var optSubText = obj[n][0]+" "+obj[n][1];
+			//var div2 = "<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">";
+		//("#search").on("div:fourth").attr('data-role="collapsible"');
+			
+	$(+
+			'<div>'+
+			'<h3>' + "" + '</h3>'+
+			'<li>' + obj.oem + '</li>'+
+			'<li>' + obj.device + '</li>'+
+			'<li>' + obj.serial + '</li>'+
+			'<li>' + obj.cust + '</li>'+
+			'<li>' + obj.phone + '</li>'+
+			'<li>' + obj.address + '</li>'+
+			'<li>' + obj.city + '</li>'+
+			'<li>' + obj.state + '</li>'+
+			'<li>' + obj.zipcode + '</li>'+
+			'<li>' + obj.date + '</li>'+
+			'<li>' + obj.esttime + '</li>'+
+			'<li>' + obj.urgent + '</li>'+
+			'<li>' + obj.textbox + '</li>'+
+			'</div>'
+		).appendTo('#search_list');
+		
+		//getImage();
+			
 	//	makeSubLi.innerHTML = optSubText;
 	//	makeSubLi.appendChild(linksLi);
-		}
+		
 		
 	}
-
+	
+	$("#search_list").listview('refresh');
+	
 	//console.log(getData);
 	
 	
-});
-*/
+};
+
 
 
 $("#clear, #clear2").click(function() {
@@ -245,6 +250,6 @@ $("#clear, #clear2").click(function() {
 
 });
 
-$('#displayAll').on('pageinit', function(){
+$('#search').on('pageinit', function(){
 		getData(datafield);
 });
