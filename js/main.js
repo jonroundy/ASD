@@ -116,8 +116,10 @@ var getData = function(data){
 	//getImage(obj.oem[1]);
 	//$('<img src="++"/>', {src:     "images/oem/" + obj.oem + ".png",'class': 'OEM_Logo' })
 //$(function(){
-		console.log(obj.oem);
+		//console.log(obj.oem);
 		
+
+            
 		$(
 			'<li>'+
 			$('<img/>', {src: "images/oem/" + obj.oem + ".png",'class': 'OEM_Logo'})+
@@ -143,7 +145,7 @@ var getData = function(data){
 		//	var optSubText = obj[n][0]+" "+obj[n][1];
 			//var div2 = "<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">";
 		//("#search").on("div:fourth").attr('data-role="collapsible"');
-			console.log(obj);
+			//console.log(obj);
 
 		
 		//getImage();
@@ -185,3 +187,77 @@ $('#search').on('pageinit', function(){
 $('#formErrors').on('pageinit', function(){
 
 });
+
+$( '#csv' ).on( 'click', function() {
+
+        $.ajax( {
+            url: 'xhr/data.csv',
+            type: 'GET',
+            dataType: 'text',
+            success:function (data) {
+var result = $.csv.toArrays();
+console.log(result);
+
+/*
+$(
+			'<li>'+
+			'<h3>' + "" + '</h3>'+
+			'<p>' + item[1] + " " + '</p>'+
+			//'<p>' + headers[2] + " " + row[2] + '</p>'+
+			//'<p>' + headers[3] + " " + row[3] + '</p>'+
+			//'<p>' + headers[4] + " " + row[4] + '</p>'+
+			//'<p>' + headers[5] + " " + row[5] + '</p>'+
+			//'<p>' + headers[6] + " " + row[6] + '</p>'+
+			//'<p>' + headers[7] + " " + row[7] + '</p>'+
+			//'<p>' + headers[8] + " " + row[8] + '</p>'+
+			//'<p>' + headers[9] + " " + row[9] + '</p>'+
+			//'<p>' + headers[10] + " " + row[10] + '</p>'+
+			//'<p>' + headers[11] + " " + row[11] + '</p>'+
+			//'<p>' + headers[12] + " " + row[12] + '</p>'+
+		//	'<p>' + headers[13] + " " + row[13] + '</p>'+
+			'</li>'
+		).appendTo('#search_list');
+	*/	
+		
+		
+		
+		
+		
+		
+		
+   //      console.log(endResult[1]);
+//console.log(item[2]);
+//console.log(item[1]);
+            
+
+/*
+$( '#csv' ).on( 'click', function() {
+
+$.ajax( {
+            url: 'xhr/data.csv',
+            type: 'GET',
+            dataType: 'text',
+            success:function (data) {
+	       	var allTextLines = data.split(/\r\n|\n/);
+	       	var headers = allTextLines[0].split(',');
+	       	var lines = [];
+
+	       	for (var i=1; i<allTextLines.length; i++) {
+		       	var data = allTextLines[i].split(',');
+		       	if (data.length == headers.length) {
+			       	var tools = [];
+
+			       	for (var j=0; j<headers.length; j++) {
+				       	tools.push(data[j]);
+}
+lines.push(tools);
+}	
+
+}
+            
+            } //success end
+            
+       }) //Ajax end
+
+});//CSV end
+*/     
