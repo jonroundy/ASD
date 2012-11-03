@@ -3,10 +3,14 @@ $('#home').on('pageinit', function(){
 });
 
 $('#addWorkOrder').on('pageinit', function() {
-
+	console.log("maybe2");
 	$('#workOrderForm').validate( {
 		invalidHandler: function (form, validator) {
-			$.mobile.changePage("#formErrors");	
+			$("#formErrors ul").empty();
+			$.mobile.changePage("#formErrors");
+			
+			//$('#formErrors').simpledialog2();	
+			//$( "#formErrors" ).popup( "open" )
 		},
 			messages: {
 			oemList: {		required: 'OEM is required.' },
@@ -21,17 +25,21 @@ $('#addWorkOrder').on('pageinit', function() {
 			date: { 		required: 'Date is required.' }
 			},
 			errorPlacement: function (error, element) {
+			console.log('hello');
                 $('<li>'+ error.text() +'</li>').appendTo($("#formErrors ul"));
+                //$("#formErrors").dialog('refresh');
             },
-			submitHandler: function(item) {
+            
+       		submitHandler: function(item) {
 				$('#workOrderForm').serializeArray();
 				storeData(this.key);
 				//$('<li>'+ item +'</li>').appendTo($("#search ul"));
 				$.mobile.changePage("#search");
 			}
-		});
+		 
 		}); // End of addWorkorder
-	
+});
+
 var storeData = function(key){
 			if(!key){
 			var id					= Math.floor(Math.random() * 100000001);
@@ -151,8 +159,7 @@ var getData = function(data){
 	getImage(obj.oem[1]);
 }; */
 
-var getImage = function(catName, obj){
-		
+var getImage = function(catName, obj){	
 		$('<img/>', {
     src:     "images/oem/" + catName + ".png",
     title:   catName,
@@ -162,7 +169,7 @@ var getImage = function(catName, obj){
         console.log( this );
     }
 }).appendTo('#search, h3');
-		
+//GetImage End
 		
 		//var imageLi = $("li");
 		//makeSubList.appendChild(imageLi);
@@ -180,26 +187,14 @@ var getData = function(data){
 		}
 	}
 	for (var i=0, len=localStorage.length; i<len; i++) {
-	
 	//var makeLi = $("<li>");
 	//makeLi.appendTo('#searchList');
-	
 	var key = localStorage.key(i);
 	var value = localStorage.getItem(key);
 	var obj = JSON.parse(value);
 	console.log(obj);
-	
 	//getImage(obj.oem[1]);
-		}
-		for (var n in obj) {
-		
-			//var makeSubLi = $("<li>");
-	//	makeSubList.appendTo(makeSubLi);
-			var optSubText = obj[n][0]+" "+obj[n][1];
-			//var div2 = "<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">";
-		//("#search").on("div:fourth").attr('data-role="collapsible"');
-			
-	$(+
+		$(+
 			'<div>'+
 			'<h3>' + "" + '</h3>'+
 			'<li>' + obj.oem + '</li>'+
@@ -218,11 +213,19 @@ var getData = function(data){
 			'</div>'
 		).appendTo('#search_list');
 		
+		}
+		
+		for (var n in obj) {
+			var optSubText = obj[n][0]+" "+obj[n][1];
+			//var div2 = "<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">";
+		//("#search").on("div:fourth").attr('data-role="collapsible"');
+			console.log(obj);
+
+		
 		//getImage();
 			
 	//	makeSubLi.innerHTML = optSubText;
 	//	makeSubLi.appendChild(linksLi);
-		
 		
 	}
 	
@@ -233,9 +236,8 @@ var getData = function(data){
 	
 };
 
-
-
 $("#clear, #clear2").click(function() {
+ console.log('maybe');
   		if(localStorage.length === 0) {
 			alert("There is no data to clear.");
 		}else{	
@@ -252,4 +254,8 @@ $("#clear, #clear2").click(function() {
 
 $('#search').on('pageinit', function(){
 		getData(datafield);
+});
+
+$('#formErrors').on('pageinit', function(){
+
 });

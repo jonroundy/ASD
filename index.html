@@ -16,7 +16,8 @@
     
     <!-- StyleSheets under here -->
     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" /> 
 
 
     	
@@ -392,7 +393,7 @@
                 		
                 </div>
            
-                <a href="#formErrors" id="fErrorsLink" data-rel="dialog" data-transition="pop">Open Errors</a>
+                <a href="#formErrors" id="fErrorsLink" id="popupBasic-popup" data-transition="pop">Open Errors</a>
                  
           </form>
 
@@ -403,7 +404,7 @@
 </div><!-- /addWorkOrder -->
 </div>
      <!-- Form Errors -->
-     <div data-role="dialog" id="formErrors" class"">
+     <div data-role="dialog" id="formErrors" class=""  data-dom-cache="false">
 
         	<div data-role="header" data-position="fixed">
         		<h1></h1>
@@ -450,6 +451,7 @@
             <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
             <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
             <script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+            <script type="text/javascript" src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog2.min.js"></script>
             <script type="text/javascript" src="js/main.js"></script>
                     <script> 
 	        	$.mobile.page.prototype.options.domCache = true; 
