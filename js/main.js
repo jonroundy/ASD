@@ -189,36 +189,30 @@ $('#formErrors').on('pageinit', function(){
 });
 
 $( '#csv' ).on( 'click', function() {
-
-        $.ajax( {
+$.ajax( {
             url: 'xhr/data.csv',
             type: 'GET',
             dataType: 'text',
             success:function (data) {
-var result = $.csv.toArrays();
-console.log(result);
 
-/*
+var data2 = $.csv2Array(data, {
+      onParseValue: $.csv.hooks.castToScalar
+    });
+
+
 $(
 			'<li>'+
 			'<h3>' + "" + '</h3>'+
-			'<p>' + item[1] + " " + '</p>'+
-			//'<p>' + headers[2] + " " + row[2] + '</p>'+
-			//'<p>' + headers[3] + " " + row[3] + '</p>'+
-			//'<p>' + headers[4] + " " + row[4] + '</p>'+
-			//'<p>' + headers[5] + " " + row[5] + '</p>'+
-			//'<p>' + headers[6] + " " + row[6] + '</p>'+
-			//'<p>' + headers[7] + " " + row[7] + '</p>'+
-			//'<p>' + headers[8] + " " + row[8] + '</p>'+
-			//'<p>' + headers[9] + " " + row[9] + '</p>'+
-			//'<p>' + headers[10] + " " + row[10] + '</p>'+
-			//'<p>' + headers[11] + " " + row[11] + '</p>'+
-			//'<p>' + headers[12] + " " + row[12] + '</p>'+
-		//	'<p>' + headers[13] + " " + row[13] + '</p>'+
+			'<p>' + data2[2] + '</p>'+
+			'<p>' + data2[3] + '</p>'+
+			'<p>' + data2[4] + '</p>'+
+			'<p>' + data2[5] + '</p>'+
+			'<p>' + data2[6] + '</p>'+
 			'</li>'
 		).appendTo('#search_list');
-	*/	
-		
+}
+})
+});
 		
 		
 		
