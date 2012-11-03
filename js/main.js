@@ -27,6 +27,7 @@ $('#addWorkOrder').on('pageinit', function() {
 			errorPlacement: function (error, element) {
 			console.log('hello');
                 $('<li>'+ error.text() +'</li>').appendTo($("#formErrors ul"));
+                $(document).off();
                 //$("#formErrors").dialog('refresh');
             },
             
@@ -35,7 +36,7 @@ $('#addWorkOrder').on('pageinit', function() {
 				storeData(this.key);
 				//$('<li>'+ item +'</li>').appendTo($("#search ul"));
 				$.mobile.changePage("#search");
-			}
+			},
 		 
 		}); // End of addWorkorder
 });
