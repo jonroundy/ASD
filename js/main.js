@@ -27,10 +27,9 @@ $('#addWorkOrder').on('pageinit', function() {
 			errorPlacement: function (error, element) {
 			console.log('hello');
                 $('<li>'+ error.text() +'</li>').appendTo($("#formErrors ul"));
-                $(document).off();
+                
                 //$("#formErrors").dialog('refresh');
-            },
-            
+            },  
        		submitHandler: function(item) {
 				$('#workOrderForm').serializeArray();
 				storeData(this.key);
@@ -58,19 +57,19 @@ var storeData = function(key){
 			//Gather up all our form field values and store in an object.
 			//Object properties are going to contain array with the form label and input value
 		var item					= {};
-		item.oem					= ["OEM List: ", $('#oemList').val()];
-		item.device					= ["Device: ", $('#deviceList').val()];
-		item.serial					= ["Serial / Service Tag: ", $('#serial').val()];
-		item.cust					= ["Customer Name: ", $('#custName').val()];
-		item.phone					= ["Phone Number: ", $('#phoneNumber').val()];
-		item.address				= ["Address: ", $('#address').val()];
-		item.city					= ["City: ", $('#city').val()];
-		item.state					= ["State: ", $('#stateList').val()];
-		item.zipcode				= ["Zipcode: ", $('#zipcode').val()];
-		item.date					= ["Date: ", $('#date').val()];
-		item.esttime				= ["Estimated Repair Time: ", $('#esttime').val()];
-		item.urgent					= ["Work order UGRENT? ", $('#urgent').val()];
-		item.textbox				= ["Notes: ", $('#textbox').val()];
+		item.oem					= $('#oemList').val();
+		item.device					= $('#deviceList').val();
+		item.serial					= $('#serial').val();
+		item.cust					= $('#custName').val();
+		item.phone					= $('#phoneNumber').val();
+		item.address				= $('#address').val();
+		item.city					= $('#city').val();
+		item.state					= $('#stateList').val();
+		item.zipcode				= $('#zipcode').val();
+		item.date					= $('#date').val();
+		item.esttime				= $('#esttime').val();
+		item.urgent					= $('#urgent').val();
+		item.textbox				= $('#textbox').val();
 
 			//Save data into Local Storage: Use Stringify to convert our object to a string. Local storage only stores strings.
 			//Save form elements into LS
@@ -161,7 +160,7 @@ var getData = function(data){
 }; */
 
 var getImage = function(catName, obj){	
-		$('<img/>', {
+		$('<img src="++"/>', {
     src:     "images/oem/" + catName + ".png",
     title:   catName,
     'class': 'OEM_Logo', // in quotes because class is a reserved js word
@@ -170,15 +169,8 @@ var getImage = function(catName, obj){
         console.log( this );
     }
 }).appendTo('#search, h3');
-//GetImage End
-		
-		//var imageLi = $("li");
-		//makeSubList.appendChild(imageLi);
-		//var newImg = $("img");
-		//var setSrc = newImg.setAttribute("src", "images/" + catName + ".png");
-		//imageLi.appendChild(newImg);
-	};
 
+};//GetImage End
 var getData = function(data){
 			//alert('maybe');
 			if(localStorage.length === 0){
@@ -193,31 +185,39 @@ var getData = function(data){
 	var key = localStorage.key(i);
 	var value = localStorage.getItem(key);
 	var obj = JSON.parse(value);
-	console.log(obj);
+	//console.log($(''));
 	//getImage(obj.oem[1]);
-		$(+
-			'<div>'+
+	//$('<img src="++"/>', {src:     "images/oem/" + obj.oem + ".png",'class': 'OEM_Logo' })
+//$(function(){
+		console.log(obj.oem);
+		$(
+			'<li>'+
+			//$('<img src="++"/>',{src:"images/oem/" + obj.oem + ".png",'class': 'OEM_Logo'})+
+			//'<img src="images/oem/" + obj.oem + ".png"><span clas="OEM_Logo"></span>'+
+			//$(function('<img src="++"/>', {src:     "images/oem/" + obj.oem + ".png",'class': 'OEM_Logo' })+
+			//'<img src="+"images/oem/" + obj.oem + ".png"+"/>'+
+			//$('<img src="++"/>').attr('src', "images/oem/" + $("#obj.oem").val() + "png")+
 			'<h3>' + "" + '</h3>'+
-			'<li>' + obj.oem + '</li>'+
-			'<li>' + obj.device + '</li>'+
-			'<li>' + obj.serial + '</li>'+
-			'<li>' + obj.cust + '</li>'+
-			'<li>' + obj.phone + '</li>'+
-			'<li>' + obj.address + '</li>'+
-			'<li>' + obj.city + '</li>'+
-			'<li>' + obj.state + '</li>'+
-			'<li>' + obj.zipcode + '</li>'+
-			'<li>' + obj.date + '</li>'+
-			'<li>' + obj.esttime + '</li>'+
-			'<li>' + obj.urgent + '</li>'+
-			'<li>' + obj.textbox + '</li>'+
-			'</div>'
+			
+			'<p><span class="oem">Brand: </span>' + obj.oem + '</p>'+
+			'<p><span class="label">Device: </span>' + obj.device + '</p>'+
+			'<p><span class="label">Serial / Service Tag: </span>' + obj.serial + '</p>'+
+			'<p><span class="label">Customer Name: </span>' + obj.cust + '</p>'+
+			'<p><span class="label">Phone Number: </span>' + obj.phone + '</p>'+
+			'<p><span class="label">Address: </span>' + obj.address + '</p>'+
+			'<p><span class="label">City: </span>' + obj.city + '</p>'+
+			'<p><span class="label">State: </span>' + obj.state + '</p>'+
+			'<p><span class="label">Zipcode: </span>' + obj.zipcode + '</p>'+
+			'<p><span class="label">Date: </span>' + obj.date + '</p>'+
+			'<p><span class="label">Estimated Repair Time: </span>' + obj.esttime + '</p>'+
+			'<p><span class="label">Work order URGENT?: </span>' + obj.urgent + '</p>'+
+			'<p><span class="label">Notes: </span>' + obj.textbox + '</p>'+
+			'</li>'
 		).appendTo('#search_list');
 		
 		}
-		
-		for (var n in obj) {
-			var optSubText = obj[n][0]+" "+obj[n][1];
+		//for (var n in obj) {
+		//	var optSubText = obj[n][0]+" "+obj[n][1];
 			//var div2 = "<div data-role="collapsible" data-collapsed="true" data-inset="true" data-theme="a">";
 		//("#search").on("div:fourth").attr('data-role="collapsible"');
 			console.log(obj);
@@ -228,17 +228,16 @@ var getData = function(data){
 	//	makeSubLi.innerHTML = optSubText;
 	//	makeSubLi.appendChild(linksLi);
 		
-	}
+	
 	
 	$("#search_list").listview('refresh');
 	
 	//console.log(getData);
 	
-	
 };
 
 $("#clear, #clear2").click(function() {
- console.log('maybe');
+ console.log('clearData');
   		if(localStorage.length === 0) {
 			alert("There is no data to clear.");
 		}else{	
