@@ -48,3 +48,7 @@ h3.ui-title{
 #menu {
 	display:none;
 }
+
+#dataPopupLink{
+	display:none;
+}
