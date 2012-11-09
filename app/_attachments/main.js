@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$("#search).live("pageshow", function(){
 	$.ajax({
 		"url": "_view/workorders",
 		"dataType": "json",
@@ -18,30 +18,28 @@ $(document).ready(function(){
 				var esttime 		= workorder.value.esttime;
 				var urgent 			= workorder.value.urgent;
 				var notes 			= workorder.value.notes;
-				$('<img/>', {
-				    src:     "images/oem/" + brand + ".png",
-				    title:   brand,
-				    'class': 'oem_logo', // in quotes because class is a reserved js word
-				}).appendTo('#search_list');
 				$('#search_list').append(
 						$('<li>').append(
-								'<li id="list_icon">'+
-								//'<img class="woicon" />'+
-								'<h3><span class="custtopname">Customer Name: </span>' + customername + '</h3>'+
+								//'<li id="list_icon">'+
+								'<img src="images/oem/'+brand+'.png" class="ui-li-icon">' +
+								'<a href="#">'+
+								'<h3>' + 'Workorder: ' + id + '</h3>'+
 								'<p><span class="oem">Brand: </span>' + brand + '</p>'+
-								'<p><span class="device">Device: </span>' + device + '</p>'+
-								'<p><span class="serial">Serial: </span>' + serial + '</p>'+
-								'<p><span class="cust">Customer Name: </span>' + customername + '</p>'+
-								'<p><span class="phonenum">Phone Number: </span>' + custphone + '</p>'+
-								'<p><span class="address">Address: </span>' + address + '</p>'+
-								'<p><span class="city">City: </span>' + city + '</p>'+
-								'<p><span class="state">State: </span>' + state + '</p>'+
-								'<p><span class="zipcode">Zipcode: </span>' + zipcode + '</p>'+
-								'<p><span class="date">Date service is due: </span>' + date + '</p>'+
-								'<p><span class="esttime">Estimated Repair Time: </span>' + esttime + '</p>'+
-								'<p><span class="urgent">Work order URGENT?: </span>' + urgent + '</p>'+
-								'<p><span class="notes">Notes: </span>' + notes + '</p>'+
-								'</li>'
+								//'<p><span class="device">Device: </span>' + device + '</p>'+
+								//'<p><span class="serial">Serial: </span>' + serial + '</p>'+
+								//'<p><span class="cust">Customer Name: </span>' + customername + '</p>'+
+								//'<p><span class="phonenum">Phone Number: </span>' + custphone + '</p>'+
+								//'<p><span class="address">Address: </span>' + address + '</p>'+
+								//'<p><span class="city">City: </span>' + city + '</p>'+
+								//'<p><span class="state">State: </span>' + state + '</p>'+
+								//'<p><span class="zipcode">Zipcode: </span>' + zipcode + '</p>'+
+								//'<p><span class="date">Date service is due: </span>' + date + '</p>'+
+								//'<p><span class="esttime">Estimated Repair Time: </span>' + esttime + '</p>'+
+								//'<p><span class="urgent">Work order URGENT?: </span>' + urgent + '</p>'+
+								//'<p><span class="notes">Notes: </span>' + notes + '</p>'+
+								'</a>'+
+								'<a href="#'+id.replace(':','')+'">Options</a>'
+								//'</li>'
 								)
 					);
 				
@@ -54,6 +52,11 @@ $(document).ready(function(){
 
 $('#home').on('pageinit', function(){
 	//code needed for main page goes here
+	/*$.couch.db("workorderapp").view("plugin/workorder", {
+		success: function(data) {
+			console.log(data);
+		}
+	});*/
 });
 
 $('#addWorkOrder').on('pageinit', function() {

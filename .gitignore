@@ -13,13 +13,7 @@ addWorkOrder.html
 
 .DS_Store
 
-css/style.css
-
 addWorkOrder.html
-
-images/oem/Dell.png
-
-index.html
 
 js/libs/jquery-1.8.2.min.js
 
@@ -41,18 +35,12 @@ addWorkOrder.html
 
 addWorkOrder.html
 
-css/style.css
-
-images/oem/Dell.png
-
-index.html
-
 js/libs/jquery-1.8.2.min.js
 
 js/libs/jquery.csv-0.65pre.min.js
 
 xhr/data.csv
 
-css/style.css
-
 .DS_Store
+
+OLD/index.html
