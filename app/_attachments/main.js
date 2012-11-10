@@ -1,4 +1,4 @@
-$("#search).live("pageshow", function(){
+$("#search").live("pageshow", function(){
 	$.ajax({
 		"url": "_view/workorders",
 		"dataType": "json",
@@ -23,7 +23,7 @@ $("#search).live("pageshow", function(){
 								//'<li id="list_icon">'+
 								'<img src="images/oem/'+brand+'.png" class="ui-li-icon">' +
 								'<a href="#">'+
-								'<h3>' + 'Workorder: ' + id + '</h3>'+
+								'<h3>' + 'Workorder: ' + id.replace(':','')+ '</h3>'+
 								'<p><span class="oem">Brand: </span>' + brand + '</p>'+
 								//'<p><span class="device">Device: </span>' + device + '</p>'+
 								//'<p><span class="serial">Serial: </span>' + serial + '</p>'+
@@ -40,9 +40,8 @@ $("#search).live("pageshow", function(){
 								'</a>'+
 								'<a href="#'+id.replace(':','')+'">Options</a>'
 								//'</li>'
-								)
+						)
 					);
-				
 			});
 			$('#search_list').listview('refresh');
 		}
@@ -50,14 +49,14 @@ $("#search).live("pageshow", function(){
 });
 //End of couchdata
 
-$('#home').on('pageinit', function(){
+$('#signup').live("pageshow", function() {
 	//code needed for main page goes here
-	/*$.couch.db("workorderapp").view("plugin/workorder", {
+	$.couch.db("workorderapp").view("app/workorders", {
 		success: function(data) {
 			console.log(data);
 		}
-	});*/
-});
+	});
+})
 
 $('#addWorkOrder').on('pageinit', function() {
 	
