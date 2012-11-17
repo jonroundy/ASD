@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="description" content="Todo List App, Just add and stay on task">
     <meta name="keywords" content="productivity, time management, mobile app">
     <meta name="robots" content="index, follow">
@@ -15,9 +15,15 @@
      <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
      <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
      <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
-     <script src="jquery.couch.js"></script>
-     <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+     <script src="js/libs/jquery.couch.js"></script>
+     <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+     <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+     <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+     
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+    
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 	
   
         	
     <!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -244,8 +250,8 @@
                 <form action="#" method="post" id="workOrderForm">
                 
                 <div data-role="fieldcontain">
-                    <label for="oemList" class="select">*Select a OEM:</label>
-                    <select name="oemList" id="oemList" data-mini="true" data-native-menu="false" class="required" />
+                    <label for="brand" class="select">*Select a OEM:</label>
+                    <select name="brand" id="brand" data-mini="true" data-native-menu="false" class="required" />
                     	
                     	<option data-placeholder="true" value="" id=""> --Select a OEM-- </option>
                         <option value="Acer">Acer</option>
@@ -267,8 +273,8 @@
              
 
                 <div data-role="fieldcontain">
-                    <label for="deviceList" class="select">*Select a device:</label>
-                    <select name="deviceList" id="deviceList" data-mini="true" data-native-menu="false" class="required" />
+                    <label for="device" class="select">*Select a device:</label>
+                    <select name="device" id="device" data-mini="true" data-native-menu="false" class="required" />
                     
                          <option data-placeholder="true" value=""> --Select a device-- </option>
                          <option value="Desktop">Desktop</option>
@@ -282,11 +288,11 @@
                 <label for="serial">*Serial / Service Tag:</label>
                 <input type="text" name="serial" id="serial" data-mini="true" class="required" placeholder="5NKTGS1" />
                 
-                <label for="custName">*Customer Name:</label>
-                <input type="text" name="custName" id="custName" data-mini="true" class="required" placeholder="John Doe" />
+                <label for="customername">*Customer Name:</label>
+                <input type="text" name="customername" id="customername" data-mini="true" class="required" placeholder="John Doe" />
                  
-                 <label for="custName">*Phone Number:</label>
-                <input type="text" name="phoneNumber" id="phoneNumber" data-mini="true" class="required" placeholder="555-555-5555" />
+                 <label for="custphone">*Phone Number:</label>
+                <input type="text" name="custphone" id="custphone" data-mini="true" class="required" placeholder="555-555-5555" />
                 
                 <label for="address">*Street Address:</label>
                 <input type="text" name="address" id="address" data-mini="true" class="required" placeholder="101 Developer Lane" />
@@ -295,8 +301,8 @@
                 <input type="text" name="city" id="city" data-mini="true" class="required" placeholder="Coderville" />      
                  
                 <div data-role="fieldcontain">
-                    <label for="stateList" class="select">*Select a state:</label>
-                    <select name="stateList" id="stateList" data-mini="true" data-native-menu="false" class="required" />
+                    <label for="state" class="select">*Select a state:</label>
+                    <select name="state" id="state" data-mini="true" data-native-menu="false" class="required" />
                         <option data-placeholder="true" value="" id=""> --Select a State-- </option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -357,7 +363,7 @@
                 <div data-role="fieldcontain">
                 	<fieldset data-role="controlgroup" data-mini="true">
                 		<label for="date">*Date service is due:</label>
-                		<input name="date" id="date" type="date" class="required date" value="" placeholder="Month/Day/Year">
+                		<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox"}' class="required date" value="" placeholder="Month/Day/Year">
                 	</fieldset>
                 </div>
                 
@@ -449,14 +455,15 @@
     <h3>Choose data type</h3>
         <div>
         <a href="#" id="json"data-role="button" data-mini="true">Json</a>
-        <a href="#" id="csv" data-role="button" data-mini="true">CSV</a>
-        <a href="#" id="xml" data-role="button" data-mini="true">XML</a>
+      <!--   <a href="#" id="csv" data-role="button" data-mini="true">CSV</a>
+        <a href="#" id="xml" data-role="button" data-mini="true">XML</a> -->
 	    </div><!-- Popup End !DELETE AFTER NEEDED BY ASD -->
         </div> <!-- search /End -->
         
+        
         <!-- JavaScript under here -->
         <!-- <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script> -->
-            <script src="main.js"></script>
+            <script src="js/main.js"></script>
             <!-- <script> 
 	        	$.mobile.page.prototype.options.domCache = true; 
 	        </script> -->
